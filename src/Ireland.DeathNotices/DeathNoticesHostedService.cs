@@ -35,7 +35,7 @@ namespace Ireland.DeathNotices
             var notices = new List<NoticePerCountyOutput>();
             var periodType = PeriodType.Month;
             
-            for (var year = 2010; year <= 2020; year++)
+            for (var year = 2020; year <= 2020; year++)
             {
                 var yearOutput = await _deathNoticeService.GetNoticesPerCountry(year, periodType);
                 await _generator.WriteToFile($"irish-death-notices-by-{periodType.ToString().ToLower()}-{year}.csv", periodType, yearOutput);
